@@ -1,4 +1,4 @@
-public class Calculate {
+public class L1_Calculate {
     public static void main(String[] args) {
 		calculate(40,5);
     }
