@@ -33,7 +33,7 @@ public class L3_SearchingOnly {
         System.out.print("Enter the element to search: ");
         int key = scanner.nextInt();
 
-        L3_Searching searchObj = new L3_Searching();
+        L3_SearchingOnly searchObj = new L3_SearchingOnly();
         searchObj.Search(arr, key);
 
         scanner.close();
