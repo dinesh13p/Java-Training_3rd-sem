@@ -37,7 +37,7 @@ class Food {
     }
 }
 
-public class ArrayListExample {
+public class A1_ArrayListExample {
     public static void main(String[] args) {
         ArrayList<Object> list = new ArrayList<>();
         Example ex = new Example();
