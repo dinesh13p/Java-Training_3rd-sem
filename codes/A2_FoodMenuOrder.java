@@ -56,6 +56,10 @@ class Menu{
         return menuItems;
     }
 
+    public void additems(Food food){
+        
+    }
+
 }
 
 public class A2_FoodMenuOrder {
@@ -76,6 +80,9 @@ public class A2_FoodMenuOrder {
             total = total + food.getPrice();
         }
         System.out.println("Total Price: "+ total);
+
+        
+
 
     }
 
