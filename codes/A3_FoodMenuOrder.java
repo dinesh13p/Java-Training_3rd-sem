@@ -69,10 +69,6 @@ class Menu {
 
     public void minFoodPrice(){
 
-        if(){
-            
-        }
-        
         System.out.println("Food with minimum amount: ");
     }
 
