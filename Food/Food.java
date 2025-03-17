@@ -26,5 +26,3 @@ class Food{
         return this.price;
     }
 }
-
-

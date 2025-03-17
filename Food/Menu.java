@@ -5,14 +5,13 @@ class Menu {
 
     public Menu() {
         this.foodList = new ArrayList<>();
-        ArrayList<Food> foodList = new ArrayList<>();
     }
 
-    public Menu(ArrayList<Food> foodlList) {
+    public Menu(ArrayList<Food> foodList) {
         this.foodList = foodList;
     }
 
-    public ArrayList<Food> getfoodList() {
+    public ArrayList<Food> getFoodList() {
         return this.foodList;
     }
 
@@ -28,4 +27,14 @@ class Menu {
             }
         }
     }
+
+    public double getFoodPrice(String name) {
+        for (Food food : foodList) {
+            if (food.getName().equals(name)) {
+                return food.getPrice();
+            }
+        }
+        return 0;
+    }
 }
+
