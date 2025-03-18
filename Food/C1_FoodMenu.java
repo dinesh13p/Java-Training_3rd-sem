@@ -1,25 +1,47 @@
-import java.util.ArrayList;
+import java.util.Scanner;
 
 public class C1_FoodMenu {
     public static void main(String[] args) {
-
+        Scanner scanner = new Scanner(System.in);
         Menu menu = new Menu();
 
-        Food pizza = new Food("Pizza", 500);
-        Food burger = new Food("Burger", 300);
-        Food momo = new Food("Momo", 150);
+        System.out.print("Enter customer name: ");
+        String customerName = scanner.nextLine();
+        System.out.print("Enter customer phone number: ");
+        String customerPhone = scanner.nextLine();
+        Customer customer = new Customer(customerName, customerPhone);
 
-        menu.addFood(pizza);
-        menu.addFood(burger);
-        menu.addFood(momo);
-
-        System.out.println("Price of Pizza: RS" + menu.getFoodPrice("Pizza"));
-        System.out.println("Price of Burger: RS" + menu.getFoodPrice("Burger"));
-        System.out.println("Price of Pasta: RS" + menu.getFoodPrice("Pasta"));
+        System.out.print("Enter the number of food items: ");
+        int n = scanner.nextInt();
+        scanner.nextLine();
 
 
-        menu.removeFood("burger");
-        System.out.println("Price of Burger after removal: RS" + menu.getFoodPrice("Burger"));
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter food name: ");
+            String name = scanner.nextLine();
+            System.out.print("Enter price: ");
+            int price = scanner.nextInt();
+            scanner.nextLine();
 
+            Food food = new Food(name, price);
+            menu.addFood(food);
+        }
+
+        System.out.print("Enter the name of food to check price: ");
+        String searchFood = scanner.nextLine();
+        System.out.println("Price of " + searchFood + ": RS" + menu.getFoodPrice(searchFood));
+
+
+        System.out.print("Enter the name of food to remove: ");
+        String removeFood = scanner.nextLine();
+        menu.removeFood(removeFood);
+        System.out.println("Price of " + removeFood + " after removal: RS" + menu.getFoodPrice(removeFood));
+
+        System.out.println("");
+        System.out.println("Customer Details:");
+        System.out.println("Name: " + customer.getCustomerName());
+        System.out.println("Phone Number: " + customer.getPhoneNumber());
+
+        scanner.close();
     }
 }

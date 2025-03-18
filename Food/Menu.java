@@ -36,5 +36,4 @@ class Menu {
         }
         return 0;
     }
-}
-
+} 
