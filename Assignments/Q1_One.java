@@ -31,7 +31,7 @@ class BankAccount {
     }
 }
 
-public class QnOne {
+public class Q1_One {
     public static void main(String[] args) {
         BankAccount sc = new BankAccount(12345, "Niraj Baniya", 1000.0);
         sc.deposit(500.0);

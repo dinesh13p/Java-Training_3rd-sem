@@ -19,7 +19,7 @@ class Q2_Book {
     }
 }
 
-public class Books {
+public class Q2_Books {
 
     public static void main(String[] args) {
         Q2_Book sc = new Q2_Book("Nepali ", "Bishal Lamichhane", 2000000);

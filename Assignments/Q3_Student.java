@@ -7,12 +7,12 @@ d.	Display all student details after sorting. */
 import java.util.Arrays;
 import java.util.Scanner;
 
-class Student {
+class Q3_Student {
     private String name;
     private int age;
     private double grade;
 
-    public Student(String name, int age, double grade) {
+    public Q3_Student(String name, int age, double grade) {
         this.name = name;
         this.age = age;
         this.grade = grade;
@@ -28,7 +28,7 @@ class Student {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Student[] students = new Student[5];
+        Q3_Student[] students = new Q3_Student[5];
 
         // a) Take user input
         for (int i = 0; i < 5; i++) {
@@ -40,7 +40,7 @@ class Student {
             System.out.print("Grade: ");
             double grade = sc.nextDouble();
             sc.nextLine(); // Consume newline
-            students[i] = new Student(name, age, grade);
+            students[i] = new Q3_Student(name, age, grade);
         }
 
         // b) Sort by grade (descending)
@@ -52,7 +52,7 @@ class Student {
 
         // d) Display all students after sorting
         System.out.println("\nAll students sorted by grade (descending):");
-        for (Student s : students) {
+        for (Q3_Student s : students) {
             s.display();
         }
         sc.close();

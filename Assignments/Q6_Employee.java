@@ -16,10 +16,10 @@ class Person {
     }
 }
 
-class Employee extends Person {
+class Q6_Employee extends Person {
     private double salary;
 
-    public Employee(String name, int age, double salary) {
+    public Q6_Employee(String name, int age, double salary) {
         super(name, age);
         this.salary = salary;
     }
@@ -30,7 +30,7 @@ class Employee extends Person {
     }
 
     public static void main(String[] args) {
-        Employee emp = new Employee("Alice", 30, 50000);
+        Q6_Employee emp = new Q6_Employee("Alice", 30, 50000);
         emp.display();
     }
 }

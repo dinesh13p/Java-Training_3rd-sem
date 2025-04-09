@@ -10,11 +10,11 @@ g.	Display the details of all rectangles after sorting them in descending order 
 import java.util.Arrays;
 import java.util.Scanner;
 
-class Rectangle {
+class Q4_Rectangle {
     private double length;
     private double width;
 
-    public Rectangle(double length, double width) {
+    public Q4_Rectangle(double length, double width) {
         this.length = length;
         this.width = width;
     }
@@ -50,7 +50,7 @@ class Rectangle {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Rectangle[] rectangles = new Rectangle[3];
+        Q4_Rectangle[] rectangles = new Q4_Rectangle[3];
 
         for (int i = 0; i < 3; i++) {
             System.out.println("Enter details for rectangle " + (i + 1) + ":");
@@ -58,22 +58,26 @@ class Rectangle {
             double length = sc.nextDouble();
             System.out.print("Width: ");
             double width = sc.nextDouble();
-            rectangles[i] = new Rectangle(length, width);
+            rectangles[i] = new Q4_Rectangle(length, width);
         }
 
         // Find rectangle with largest area
-        Rectangle largest = Arrays.stream(rectangles)
-                .max((r1, r2) -> Double.compare(r1.area(), r2.area()))
-                .get();
-        System.out.println("\nRectangle with largest area:");
-        largest.display();
+        Q4_Rectangle largest = Arrays.stream(rectangles)
+            .max((r1, r2) -> Double.compare(r1.area(), r2.area()))
+            .orElse(null);
+
+        if (largest != null) {
+            System.out.println("\nRectangle with largest area:");
+            largest.display();
+        }
 
         // Sort and display
         Arrays.sort(rectangles, (r1, r2) -> Double.compare(r2.area(), r1.area()));
         System.out.println("\nRectangles sorted by area (descending):");
-        for (Rectangle r : rectangles) {
+        for (Q4_Rectangle r : rectangles) {
             r.display();
         }
+
         sc.close();
     }
 }

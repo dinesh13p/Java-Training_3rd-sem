@@ -1,10 +1,10 @@
-/* 7.	Create a base class Shape with a method area(). Implement the following functionalities:
+/* 7.  Create a base class Shape with a method area(). Implement the following functionalities:
 a.	Inherit Circle and Square from Shape, where each class overrides the area() method to calculate and return the respective area.
 b.	Implement constructor overloading in both Circle and Square to initialize objects either with default values or user-specified values.
 c.	Create a ShapeManager class that:
-i.	Stores multiple Shape objects (both Circle and Square) in an array.
-ii.	Implements a method to find the shape with the largest area and display its type (Circle or Square) along with its area.
-iii.	Implements a method to sort all shapes in descending order of area and display their details. */
+    i.	Stores multiple Shape objects (both Circle and Square) in an array.
+    ii.	Implements a method to find the shape with the largest area and display its type (Circle or Square) along with its area.
+    iii.	Implements a method to sort all shapes in descending order of area and display their details. */
 
 import java.util.Arrays;
 
@@ -54,10 +54,10 @@ class Square extends Shape {
     }
 }
 
-class ShapeManager {
+class Q7_ShapeManager {
     private Shape[] shapes;
 
-    public ShapeManager(Shape[] shapes) {
+    public Q7_ShapeManager(Shape[] shapes) {
         this.shapes = shapes;
     }
 
@@ -82,7 +82,7 @@ class ShapeManager {
         Shape[] shapes = {
                 new Circle(2.0), new Square(3.0), new Circle(), new Square(1.5)
         };
-        ShapeManager manager = new ShapeManager(shapes);
+        Q7_ShapeManager manager = new Q7_ShapeManager(shapes);
         manager.findLargestArea();
         manager.sortAndDisplay();
     }

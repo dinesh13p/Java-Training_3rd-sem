@@ -21,7 +21,7 @@ class Cat extends Animal {
     }
 }
 
-class Main {
+class Q5_Main {
     public static void main(String[] args) {
         Animal[] animals = { new Dog(), new Cat() };
         for (Animal a : animals) {
