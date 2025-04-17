@@ -4,7 +4,6 @@ b.	Implement a method to sort the students based on their grade in descending or
 c.	Implement a method to find and display the student with the highest grade.
 d.	Display all student details after sorting. */
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 class Q3_Student {
@@ -30,7 +29,7 @@ class Q3_Student {
         Scanner sc = new Scanner(System.in);
         Q3_Student[] students = new Q3_Student[5];
 
-        // a) Take user input
+        // Input student details
         for (int i = 0; i < 5; i++) {
             System.out.println("Enter details for student " + (i + 1) + ":");
             System.out.print("Name: ");
@@ -39,22 +38,31 @@ class Q3_Student {
             int age = sc.nextInt();
             System.out.print("Grade: ");
             double grade = sc.nextDouble();
-            sc.nextLine(); // Consume newline
+            sc.nextLine(); // Consume the newline
             students[i] = new Q3_Student(name, age, grade);
         }
 
-        // b) Sort by grade (descending)
-        Arrays.sort(students, (s1, s2) -> Double.compare(s2.getGrade(), s1.getGrade()));
+        // Sort students by grade in descending order
+        for (int i = 0; i < students.length - 1; i++) {
+            for (int j = i + 1; j < students.length; j++) {
+                if (students[i].getGrade() < students[j].getGrade()) {
+                    Q3_Student temp = students[i];
+                    students[i] = students[j];
+                    students[j] = temp;
+                }
+            }
+        }
 
-        // c) Find student with highest grade
+        // Display the student with the highest grade
         System.out.println("\nStudent with highest grade:");
         students[0].display();
 
-        // d) Display all students after sorting
+        // Display all students sorted by grade
         System.out.println("\nAll students sorted by grade (descending):");
-        for (Q3_Student s : students) {
-            s.display();
+        for (Q3_Student student : students) {
+            student.display();
         }
+
         sc.close();
     }
 }

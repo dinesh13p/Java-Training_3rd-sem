@@ -37,6 +37,5 @@ public class Q1_One {
         sc.deposit(500.0);
         sc.withdraw(600.0);
         sc.displayBalance();
-
     }
 }
